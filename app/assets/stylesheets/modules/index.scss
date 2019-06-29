@@ -1,0 +1,176 @@
+div {
+  
+  header {
+    background-color: skyblue;
+    height: 70px;
+    width:100%;
+
+    .search {
+      height: 50px;
+      padding-top: 10px;
+      padding-left: 20px;
+      display: flex;
+
+      &__form {
+        width: 160px;
+        background-color: white;
+        font-size: 100%;
+        border-radius: 20px;
+        outline: 0;
+        color: black;
+        font-weight: bold;
+        opacity: 0.7;
+        margin-top: 5px;
+        transition: 0.5s all ease 0s;
+      }
+      &__form:focus {
+        opacity: 0.8;
+        width: 230px;
+      }
+
+      &__btn {
+        height: 30px;
+        width: 30px;
+        border-radius: 50px 50px 50px 1px;
+        transform:rotate(25deg);
+        cursor: pointer;
+        outline: 0;
+        transition: 0.5s all ease 0s;
+        opacity: 0.7;
+        margin-left: 6px; 
+      }
+      &__btn:hover {
+        opacity: 0.7;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        transform:rotate(720deg);
+      }
+    }
+    
+    .boardCreateBtn {
+      height:50px;
+      width:50px;
+      border-radius: 10px;
+      margin:0 10px;
+      border: 4px solid white;
+      padding: 8px;
+      margin-top: 10px;
+
+      .fa-plus {
+        color: white;
+        font-size: 30px;
+        transition: 0.5s all ease 0s;
+        
+      }
+      .fa-plus:hover{
+        transform:rotate3d(1,1,1,360deg);
+        color: royalblue;
+        opacity: 0.6;
+      }
+    }
+
+    .mypageBtnBox {
+      padding-right: 30px;
+
+      .mypageBtn {
+        background-color: deepskyblue;
+        height: 60px;
+        width: 60px;
+        margin: 4px;
+        border-radius: 50px;
+        cursor: pointer;
+        outline: 0;
+      }
+    }
+
+    
+    .logo {
+      width: 140px;
+      margin: 0 auto;
+
+      p:nth-of-type(1) {
+        line-height: 70px;
+        font-size: 30px;
+        width: 140px;
+        font-weight: bold;
+        font-family: Comic Sans MS;
+        color: white;
+        transition: 0.3s all ease 0s;
+      }
+      p:nth-of-type(1):active {
+        transform:rotateX(360deg);
+        color: royalblue;
+        opacity: 0.6;
+      }
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
+  .container-fluid{
+    height: calc(100vh - 140px);
+
+    .main {
+      margin: 0 auto;
+      padding-top: 60px;
+      height: calc(100vh - 140px);
+      width: 70vw;
+
+      .boardList {
+        width: 70vw;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .board {
+          background-color: skyblue;
+          height: 18vh;
+          width: 19vw;
+          margin: 10px;
+          padding:10px;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: 1s all ease 0s;
+
+          p {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            word-wrap: break-word;
+          }
+        }
+
+        .board:hover {
+          opacity: 0.6;
+          height: 26vh;
+          width: 26vw;
+          transform:rotateY(360deg);
+
+          p {
+            line-height: 20vh;
+            text-align: center;
+            font-size: 45px;
+            color: royalblue;
+          }
+        }
+
+
+        a {
+          text-decoration: none;
+          
+        }
+      }
+    }
+  }
+
+  footer {
+    background-color: skyblue;
+    height: 70px;
+    position: relative;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,41 @@
+%div
+  %header
+    .container-fluid
+      .row
+        .search
+          = search_field  "", "", class:"search__form", placeholder:"キーワードを入力"
+          = link_to "#" do
+            %button{type:"submit", class:"search__btn"}
+              %i.fas.fa-search
+        .logo
+          = link_to "#" do
+            %p Sorce Me
+        .boardCreateBtn
+          = link_to "#" do
+            %i.fas.fa-plus
+        .mypageBtnBox
+          = link_to "#" do
+            .mypageBtn
+  .container-fluid
+    .row
+      .main
+        .boardList
+          = link_to "#" do
+            .board
+              %p 仕事
+          = link_to "#" do
+            .board
+              %p プライベート
+          = link_to "#" do
+            .board
+              %p プログラミング
+          = link_to "#" do
+            .board
+              %p 英語
+          = link_to "#" do
+            .board
+              %p レシピ
+          = link_to "#" do
+            .board
+              %p ダイエット
+  %footer
