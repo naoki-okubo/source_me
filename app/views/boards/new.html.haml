@@ -1,0 +1,16 @@
+%div
+  .container-fluid
+    .row
+      = render 'shared/board-header'
+      .main
+        .boardCreate
+          .boardCreate__title
+            %p 新しいボードの作成
+          .boardCreate__form
+            .title
+              = text_field  "", "", class:"title__form", placeholder:"タイトルを入力"
+            .submit
+              = link_to root_path do
+                %button{type:"submit", class:"submit__btn"}
+                  %p 作成する
+      %footer
