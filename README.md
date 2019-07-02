@@ -1,24 +1,68 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 
-* Ruby version
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :boards, dependent: :destroy
+- has_many :sources, dependent: :destroy
+- has_many :category, dependent: :destroy
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## boardsテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|user_id|references|null: false, foreign_key: true|
 
-* ...
+
+### Association
+
+- belongs_to :user
+- has_many :sources, dependent: :destroy
+- has_many :category, dependent: :destroy
+
+
+## sourcesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|url|text|null: false|
+|title|string|null: false|
+|text|text|---|
+|user_id|bigint|null: false, foreign_key: true|
+|board_id|bigint|null: false, foreign_key: true|
+|category_id|bigint|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :board
+- belongs_to :category, dependent: :destroy
+
+## categoriesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|board_id|references|null: false, foreign_key: true|
+
+### Association
+
+- belongs_to :user
+- belongs_to :board
+- has_many :sources, dependent: :destroy
