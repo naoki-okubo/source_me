@@ -10,10 +10,20 @@
       = link_to root_path, class:"logo-contents" do
         %i.fas.fa-screwdriver
         %p SourceMe
-  .right-contents
-    = link_to new_board_path do
-      .boardCreateBtn
-        %i.fas.fa-plus
-    = link_to "#" do
-      .mypageBtnBox
-        .mypageBtn
+  - if user_signed_in?
+    .right-contents
+      = link_to new_board_path do
+        .boardCreateBtn
+          %i.fas.fa-plus
+      = link_to user_path(current_user.id) do
+        .mypageBtnBox
+          .mypageBtn
+            .user-nickname
+              = current_user.nickname
+  - else
+    .right-contents
+      = link_to new_user_registration_path do
+        新規登録
+      = link_to user_session_path do
+        ログイン
+
