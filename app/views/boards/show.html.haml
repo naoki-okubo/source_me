@@ -1,0 +1,15 @@
+%div
+  .container-fluid
+    .row
+      = render 'shared/header'
+      .main
+        = link_to destroy_user_session_path, method: :delete do
+          ログアウト
+        .boardList
+          - i = 0
+          -  while i < @user.boards.length
+            = link_to sources_path do
+              .board
+                %p
+                  = @user.boards[i].name
+            - i += 1

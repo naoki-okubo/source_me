@@ -11,17 +11,17 @@
     padding-bottom:10px;
     margin: 0 auto;
     margin-bottom: 40px;
-    border: 4px double black;
+    border: 4px double grey;
 
     &__title {
       margin: 0 10px;
 
       p {
-        border: 1px solid black;
+        border: 1px solid grey;
         border-radius: 10px;
         font-size: 20px;
         font-weight: bold;
-        color: black;
+        color: rgb(80, 80, 80);
         line-height: 40px;
         text-align: center;
         margin-bottom: 0px;
@@ -54,6 +54,7 @@
           background-color: white;
           -webkit-appearance: none;
           transition: 1s all ease 0s;
+          color: gray;
         }
 
         &__text:focus {
@@ -74,7 +75,7 @@
           width: 20vw;
           border-radius: 10px;
           cursor: pointer;
-          border: 4px double black;
+          border: 4px double grey;
           transition: 0.3s all ease 0s;
           outline: 0;
           padding: 10px 0 10px 0;

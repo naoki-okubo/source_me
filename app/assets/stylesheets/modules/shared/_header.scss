@@ -158,11 +158,32 @@ div {
             outline: 0;
             border: 4px double black;
             transition: 0.2s all ease 0s;
+
+            .user-nickname {
+              max-width: 110px;
+              overflow: hidden;
+              white-space: nowrap;
+              color: gray;
+              text-align: center;
+              line-height: 55px;
+              font-size: 18px;
+            }
           }
           
           .mypageBtn:hover {
             border: 2px solid black;
+            width: none;
+
+            .user-nickname {
+              font-size: 19px;
+              line-height: 60px;
+              color: black;
+            }
           }
+        }
+
+        a {
+          text-decoration: none;
         }
       }
     }
