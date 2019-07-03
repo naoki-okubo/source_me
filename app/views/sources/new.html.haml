@@ -1,0 +1,25 @@
+%div
+  .container-fluid
+    .row
+      = render 'shared/header'
+      .new-main
+        .sourceCreate
+          .sourceCreate__title
+            %p 新規 Source記事
+          .sourceCreate__form
+            .form
+              %p タイトル(必須):
+              = text_field  "", "", class:"form__title", placeholder:"タイトルを入力"
+            .form
+              %p URL(必須):
+              = text_field  "", "", class:"form__url", placeholder:"URLを入力"
+            .form
+              %p カテゴリー(必須):
+              = select  "", "", カテゴリーを選択:"",class:"form__category"
+            .form
+              %p 記事内容(任意):
+              = text_area  "", "", class:"form__text", placeholder:"記事内容を入力"
+            .submit
+              = link_to sources_path do
+                %button{type:"submit", class:"submit__btn"}
+                  %p 作成する

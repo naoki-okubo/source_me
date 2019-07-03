@@ -66,6 +66,10 @@
                   %p カテゴリーを追加する 
           .side__sources
             .center
+              = link_to new_source_path do
+                .createSourceBtn
+                  %i.fas.fa-plus
+                  %p 新規Source記事
               .source-contents
                 .source-box
                   = link_to "#" do
@@ -139,15 +143,14 @@
                       %p web デザイン　参考
                   = link_to "https://qiita.com/watak676/items/525ad3d8a1297e3244e3" do
                     %i.fas.fa-external-link-alt
-
         .body-contents
           .sub-header
             .board-title
               %h1 プログラミング
-            = link_to "#" do
-              .createSourceBtn
-                %i.fas.fa-plus
-                %p Sourceを追加する 
+            -# = link_to new_source_path do
+            -#   .createSourceBtn
+            -#     %i.fas.fa-plus
+            -#     %p 新規Source記事
           .body
             .source-top
               = link_to "https://qiita.com/watak676/items/525ad3d8a1297e3244e3" do

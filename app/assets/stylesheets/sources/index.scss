@@ -97,7 +97,7 @@
 
           p {
             border-bottom: 1px solid black;
-            max-width: 110px;
+            max-width: 130px;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
@@ -126,12 +126,53 @@
       border-left: 1px dashed gray;
       width:14vw;
       height: calc( 100vh - 70px );
-      padding-top: 10px;
+      padding-top: 7px;
 
       .center {
+        display: flex;
+        flex-direction: column;
+
+        .createSourceBtn {
+          border: 1px solid gray;
+          -webkit-text-stroke: 1px gray;
+          padding: 5px;
+          display: flex;
+          border-radius: 5px;
+          margin:0 15px 20px 10px;
+  
+          .fa-plus {
+            margin-right: 5px;
+            color: white;
+          }
+  
+          p {
+            text-align: center;
+            color: white;
+            letter-spacing: 1.5px;
+            max-width: 300px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-bottom: 0;
+          }
+        }
+
+        .createSourceBtn:hover {
+          border: 2px solid black;
+          -webkit-text-stroke: 1px black;
+  
+          .fa-plus {
+            color: black;
+          }
+  
+          p {
+            color: black;
+          }
+        }
+
         .source-contents {
           overflow: scroll;
-          height: 89vh;
+          height: 74vh;
 
           .source-box {
             display: flex;
@@ -169,6 +210,7 @@
             -webkit-text-stroke: 1px black;
             font-weight: bold;
           }
+
         }
       }
     }
@@ -202,43 +244,6 @@
           font-family: sans-serif;
           margin-bottom: 0px;
           opacity: 0.7;
-        }
-      }
-      
-      .createSourceBtn {
-        height: 40px;
-        width: 170px;
-        border: 3px double gray;
-        -webkit-text-stroke: 1px gray;
-        padding: 5px;
-        display: flex;
-        border-radius: 5px;
-        margin: 7px 7px 0 7px;
-        float: right;
-
-        .fa-plus {
-          line-height: 30px;
-          margin-right: 5px;
-          color: white;
-        }
-
-        p {
-          line-height: 30px;
-          text-align: center;
-          color: white;
-        }
-      }
-
-      .createSourceBtn:hover {
-        border: 2px solid black;
-        -webkit-text-stroke: 1px black;
-
-        .fa-plus {
-          color: black;
-        }
-
-        p {
-          color: black;
         }
       }
     }
