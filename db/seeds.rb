@@ -15,7 +15,8 @@ User.create!([
     family_name: "奏巣",
     first_name: "未ー",
     family_name_kana: "ソース",
-    first_name_kana: "ミー"
+    first_name_kana: "ミー",
+    password: "123456"
   },
   {
     nickname: "テスト　太郎",
@@ -23,7 +24,8 @@ User.create!([
     family_name: "手酢斗",
     first_name: "太郎",
     family_name_kana: "テスト",
-    first_name_kana: "タロウ"
+    first_name_kana: "タロウ",
+    password: "123456"
   }
 ])
 
