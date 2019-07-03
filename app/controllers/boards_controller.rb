@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-  before_action :set_user
+  before_action :set_user,except: :index
 
   def index
     redirect_to board_path(current_user.id) if user_signed_in?
@@ -27,5 +27,4 @@ class BoardsController < ApplicationController
   def set_user
     @user = User.find(current_user.id)
   end
-
 end
