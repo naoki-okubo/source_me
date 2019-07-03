@@ -3,6 +3,13 @@
     .row
       = render 'shared/header'
       .main
+        -if user_signed_in?
+          = current_user.family_name
+          = current_user.first_name
+        = link_to new_user_session_path do
+          ログイン
+        = link_to destroy_user_session_path, method: :delete do
+          ログアウト
         .boardList
           -# リンクは仮置き
           = link_to sources_path do
