@@ -1,47 +1,67 @@
-.boards-new {
+.sources-new {
 
-  .main {
+  .new-main {
     margin: 0 auto;
-    padding-top: 60px;
+    padding-top: 40px;
+    height: calc(100vh - 140px);
     width: 70vw;
   
-    .boardCreate {
-      width: 42vw;
+    .sourceCreate {
+      width: 60vw;
       border-radius: 20px;
-      padding:30px;
+      padding-top:10px;
+      padding-bottom:10px;
       margin: 0 auto;
-      border: 4px double black;
-      
+      margin-bottom: 40px;
+      border: 4px double grey;
   
       &__title {
         margin: 0 10px;
+  
         p {
-          border: 1px solid black;
+          border: 1px solid grey;
           border-radius: 10px;
           font-size: 20px;
           font-weight: bold;
-          color: black;
+          color: rgb(80, 80, 80);
           line-height: 40px;
           text-align: center;
+          margin-bottom: 0px;
         }
       }
   
       &__form {
         text-align: center;
-        margin-top:40px;
+        margin-top:20px;
   
-        .title {
+        .form {
+          display: flex;
+          justify-content: space-between;
+          padding:0 25px;
+          p {
+            color: grey;
+          }
   
-          &__form {
-            height: 7vh;
-            width: 30vw;
+          &__title, &__url, &__text, select{
+            height: 50px;
+            width: 35vw;
             border-radius: 10px;
             opacity: 0.8;
             font-size: 18px;
             font-weight: bold;
             outline: 0;
             padding-left: 10px;
+            margin: 20px 0;
             font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+            background-color: white;
+            -webkit-appearance: none;
+            transition: 1s all ease 0s;
+            color: gray;
+          }
+  
+          &__text:focus {
+            height: 45vh;
+            width: 45vw;
           }
   
           &__form:focus {
@@ -50,21 +70,23 @@
         }
   
         .submit {
-          margin-top:30px;
+          margin-top:10px;
+          margin-bottom:20px;
   
           &__btn {
             width: 20vw;
             border-radius: 10px;
             cursor: pointer;
-            border: 4px double black;
+            border: 4px double grey;
             transition: 0.3s all ease 0s;
             outline: 0;
+            padding: 10px 0 10px 0;
   
             p {
-              line-height: 30px;
               font-size: 20px;
               font-weight: bold;
-              color:  gray;
+              color:  white;
+              -webkit-text-stroke: 1px black;
               margin-bottom: 0;
             }
   

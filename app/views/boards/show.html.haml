@@ -2,8 +2,6 @@
   .container-fluid
     .row
       = render 'shared/header'
-      = link_to destroy_user_session_path, method: :delete do
-        ログアウト
       - if 0 < @user.boards.length
         .main
           .boardList
