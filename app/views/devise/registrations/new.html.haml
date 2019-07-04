@@ -1,4 +1,4 @@
-%div
+%div.registration-new
   .container-fluid
     .row
       = render 'shared/header'
@@ -35,4 +35,5 @@
                 = f.password_field :password_confirmation, autocomplete: "new-password", class:"form__url", placeholder:"６文字以上"
               .submit
                 = f.submit "登録する", class:"submit__btn"
-              = render "devise/shared/links"
+              .submit.login__btn
+                = render partial:"devise/shared/links"
