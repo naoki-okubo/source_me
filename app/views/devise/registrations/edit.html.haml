@@ -1,0 +1,55 @@
+%div.users-edit
+  .container-fluid
+    .row
+      = render 'shared/header'
+      .new-main
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          = render "devise/shared/error_messages", resource: resource
+          .sourceCreate
+            .sourceCreate__title
+              %p プロフィール編集
+            .sourceCreate__form
+              .form-contents
+                .form
+                  %p ニックネーム
+                  = f.text_field :nickname,autofocus: true, class:"value"
+                .form
+                  %p メールアドレス
+                  = f.email_field :email, autocomplete: "email", class:"value"
+                .form
+                  %p 姓
+                  = f.text_field :family_name, class:"value"
+                .form
+                  %p 名
+                  = f.text_field :first_name, class:"value"
+                .form
+                  %p 姓(カナ)
+                  = f.text_field :family_name_kana, class:"value"
+                .form
+                  %p 名(カナ)
+                  = f.text_field :first_name_kana, class:"value"
+                - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                  %div
+                    Currently waiting confirmation for: #{resource.unconfirmed_email}
+                .form
+                  %p.any パスワードを変更する
+                  = f.password_field :password, autocomplete: "new-password", placeholder:"変更しない場合は空白（ ６文字以上 ）", class:"value"
+                .form
+                  %p.any パスワードを変更する(確認)
+                  = f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"変更しない場合は空白", class:"value"
+                .form.form_current-password
+                  %p 現在のパスワード
+                  = f.password_field :current_password, autocomplete: "current-password", placeholder:"６文字以上", class:"value"
+
+              .submit
+                = f.submit "更新する", class:"submit__btn"
+        
+        .sourceCreate
+          .sourceCreate__title
+            %p 退会する
+          .submit
+            #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class:"cancel-btn"}
+        .sourceCreate__title
+          = link_to :back, class:"back-btn" do
+            .submit-back
+              戻る

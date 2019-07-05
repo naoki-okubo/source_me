@@ -1,5 +1,5 @@
 .boards-new {
-
+  font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
   .main {
     margin: 0 auto;
     padding-top: 60px;
@@ -51,6 +51,7 @@
   
         .submit {
           margin-top:30px;
+          margin-bottom:30px;
   
           &__btn {
             width: 20vw;
@@ -77,6 +78,33 @@
                 }
               }
         }
+      }
+
+      .submit-back {
+        background-color: lightgray;
+        width: 16vh;
+        font-size: 25px;
+        margin:0 auto;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+  
+        .back-btn {
+          text-align: center;
+          color: gray;
+        }
+      }
+  
+      a {
+        text-decoration: none;
+        color: gray;
+      }
+  
+      .submit-back:hover {
+        opacity: 0.5;
+        color: black;
+        font-weight: bold;
       }
   
       a {

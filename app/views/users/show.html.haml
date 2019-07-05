@@ -32,9 +32,13 @@
                 %p 名(カナ)
                 .value
                   = current_user.first_name_kana
-            .submit__btn
-              = link_to edit_user_registration_path do
+            = link_to edit_user_registration_path do
+              .submit__btn
                 %p 編集する
-            .submit__btn
-              = link_to destroy_user_session_path, method: :delete do
+            = link_to destroy_user_session_path, method: :delete do
+              .submit__btn
                 ログアウト
+          .sourceCreate__title
+            = link_to :back, class:"back-btn" do
+              .submit-back
+                戻る

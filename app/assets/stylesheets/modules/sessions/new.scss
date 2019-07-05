@@ -1,5 +1,5 @@
 .sessions-new {
-
+  font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
   .new-main {
     margin: 0 auto;
     padding-top: 40px;
@@ -7,7 +7,7 @@
     width: 70vw;
   
     .sourceCreate {
-      width: 60vw;
+      width: 50vw;
       border-radius: 20px;
       padding-top:10px;
       padding-bottom:10px;
@@ -60,6 +60,7 @@
             -webkit-appearance: none;
             transition: 1s all ease 0s;
             color: gray;
+            text-align: center;
           }
   
           &__text:focus {
@@ -119,6 +120,34 @@
           font-weight: bold;
           border-bottom: 3px solid black;
         }
+      }
+
+      .submit-back {
+        background-color: lightgray;
+        width: 16vh;
+        font-size: 25px;
+        margin:0 auto;
+        margin-bottom: 5vh;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+  
+        .back-btn {
+          text-align: center;
+          color: gray;
+        }
+      }
+  
+      a {
+        text-decoration: none;
+        color: gray;
+      }
+  
+      .submit-back:hover {
+        opacity: 0.5;
+        color: black;
+        font-weight: bold;
       }
   
       a {
