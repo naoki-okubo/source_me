@@ -1,0 +1,19 @@
+%div.password-new
+  .container-fluid
+    .row
+      = render 'shared/header'
+      .new-main
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          .sourceCreate
+            .sourceCreate__title
+              %p パスワードをお忘れの方
+            .sourceCreate__form
+              .form
+                = f.email_field :email, autofocus: true, autocomplete: "email", class:"form__url", placeholder:"メールアドレス"
+              .submit
+                = f.submit "パスワードの再設定を行う", class:"submit__btn"
+              .submit.login__btn
+                = render "devise/shared/links"
+            = link_to :back, class:"back-btn" do
+              .submit-back
+                戻る
