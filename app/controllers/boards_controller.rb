@@ -6,9 +6,12 @@ class BoardsController < ApplicationController
   end
 
   def new
+    @board = Board.new
   end
 
   def create
+    binding.pry
+    @board = Board.create(board_params)
   end
 
   def show
@@ -26,5 +29,11 @@ class BoardsController < ApplicationController
   
   def set_user
     @user = User.find(current_user.id)
+  end
+
+  private
+
+  def board_params
+    params.require(:board).permit(:name).merge(user_id: current_user.id)
   end
 end
