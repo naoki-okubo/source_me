@@ -3,17 +3,16 @@
     .row
       = render 'shared/header'
       .main
-        .boardCreate
-          .boardCreate__title
-            %p 新しいボードの作成
-          .boardCreate__form
-            .title
-              = text_field  "", "", class:"title__form", placeholder:"タイトルを入力", autofocus: true
-            .submit
-              = link_to root_path do
-                %button{type:"submit", class:"submit__btn"}
-                  %p 作成する
-            .sourceCreate__title
-              = link_to :back, class:"back-btn" do
-                .submit-back
-                  戻る
+        = form_with(model:@board, local: true) do |f|
+          .boardCreate
+            .boardCreate__title
+              %p 新しいボードの作成
+            .boardCreate__form
+              .title
+                = f.text_field :name, class:"title__form", placeholder:"タイトルを入力", autofocus: true
+              .submit
+                = f.submit "作成する", class:"submit__btn"
+              .sourceCreate__title
+                = link_to :back, class:"back-btn" do
+                  .submit-back
+                    戻る
