@@ -3,23 +3,26 @@
     .row
       = render 'shared/header'
       .new-main
-        .sourceCreate
-          .sourceCreate__title
-            %p 新規 Source記事
-          .sourceCreate__form
-            .form
-              %p タイトル(必須):
-              = text_field  "", "", class:"form__title", placeholder:"タイトルを入力", autofocus: true
-            .form
-              %p URL(必須):
-              = text_field  "", "", class:"form__url", placeholder:"URLを入力"
-            .form
-              %p カテゴリー(必須):
-              = select  "", "", カテゴリーを選択:"",class:"form__category"
-            .form
-              %p 記事内容(任意):
-              = text_area  "", "", class:"form__text", placeholder:"記事内容を入力"
-            .submit
-              = link_to sources_path do
-                %button{type:"submit", class:"submit__btn"}
-                  %p 作成する
+        = form_with(model:@source, local: true) do |f|
+          .sourceCreate
+            .sourceCreate__title
+              %p 新規 Source記事
+            .sourceCreate__form
+              .form-contents
+                .form
+                  %p カテゴリー
+                  .select-box
+                    = f.select :category_id,@board.map{|category|["#{category.name}",category.id]},{prompt: "---"}, class:"value", autofocus: true
+                .form
+                  %p タイトル
+                  = f.text_field :title, class:"value", placeholder:"タイトルを入力"
+                .form
+                  %p URL
+                  = f.text_field :url, class:"value", placeholder:"URLを入力"
+                .form
+                  %p 記事内容
+                  = f.text_area :text, class:"value text-form", placeholder:"記事内容を入力"
+                .form_board-id
+                  = f.text_field :board_id,value:"#{@board_id}"
+                .submit
+                  = f.submit "作成する", class:"submit__btn"
