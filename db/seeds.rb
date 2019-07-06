@@ -74,22 +74,22 @@ Category.create!([
   {
     name: "お肉料理",
     user_id: "2",
-    board_id: "1"
+    board_id: "3"
   },
   {
     name: "野菜料理",
     user_id: "2",
-    board_id: "1"
+    board_id: "3"
   },
   {
     name: "梅田駅近辺",
     user_id: "2",
-    board_id: "2"
+    board_id: "4"
   },
   {
     name: "難波駅近辺",
     user_id: "2",
-    board_id: "2"
+    board_id: "4"
   }
 ])
 
