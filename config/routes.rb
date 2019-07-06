@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :boards
   resources :sources
   resources :users
+  resources :categories
 end
