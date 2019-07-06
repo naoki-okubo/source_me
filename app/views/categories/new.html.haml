@@ -2,6 +2,7 @@
   .container-fluid
     .row
       = render 'shared/header'
+      = render 'shared/error-message'
       .main
         = form_with(model:@category, local: true) do |f|
           .boardCreate
@@ -14,6 +15,6 @@
               .submit
                 = f.submit "作成する", class:"submit__btn"
               .sourceCreate__title
-                = link_to :back, class:"back-btn" do
+                = link_to @source_path, class:"back-btn" do
                   .submit-back
                     戻る

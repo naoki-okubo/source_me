@@ -12,8 +12,14 @@ class SourcesController < ApplicationController
 
   def create
     @params_source = params[:source]
-    @source  = Source.create(source_parems)
-    redirect_to source_path(@params_source[:board_id])
+    @source  = Source.new(source_parems)
+    @board_id = @params_source[:board_id]
+    if @source.save
+      redirect_to source_path(@board_id)
+    else
+      flash[:notice] = "error"
+      redirect_to new_source_path(@board_id)
+    end
   end
 
   def show

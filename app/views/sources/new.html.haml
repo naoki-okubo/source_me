@@ -2,6 +2,7 @@
   .container-fluid
     .row
       = render 'shared/header'
+      = render 'shared/error-message'
       .new-main
         = form_with(model:@source, local: true) do |f|
           .sourceCreate
@@ -14,15 +15,19 @@
                   .select-box
                     = f.select :category_id,@board.map{|category|["#{category.name}",category.id]},{prompt: "---"}, class:"value", autofocus: true
                 .form
-                  %p タイトル
-                  = f.text_field :title, class:"value", placeholder:"タイトルを入力"
-                .form
                   %p URL
                   = f.text_field :url, class:"value", placeholder:"URLを入力"
                 .form
+                  %p タイトル
+                  = f.text_field :title, class:"value", placeholder:"タイトルを入力"
+                .form
                   %p 記事内容
-                  = f.text_area :text, class:"value text-form", placeholder:"記事内容を入力"
+                  = f.text_area :text, class:"value text-form", placeholder:"記事内容を入力 ( 最大1000文字 )"
                 .form_board-id
                   = f.text_field :board_id,value:"#{@board_id}"
                 .submit
                   = f.submit "作成する", class:"submit__btn"
+                .sourceCreate__title
+                  = link_to source_path(@board_id), class:"back-btn" do
+                    .submit-back
+                      戻る
