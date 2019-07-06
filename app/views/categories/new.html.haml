@@ -1,0 +1,19 @@
+%div.categories-new
+  .container-fluid
+    .row
+      = render 'shared/header'
+      .main
+        = form_with(model:@category, local: true) do |f|
+          .boardCreate
+            .boardCreate__title
+              %p 新しいカテゴリーの作成
+            .boardCreate__form
+              .title
+                = f.text_field :name, class:"title__form", placeholder:"タイトルを入力", autofocus: true
+                = f.text_field :board_id, class:"title__board-id",value:"#{@board_id}"
+              .submit
+                = f.submit "作成する", class:"submit__btn"
+              .sourceCreate__title
+                = link_to :back, class:"back-btn" do
+                  .submit-back
+                    戻る

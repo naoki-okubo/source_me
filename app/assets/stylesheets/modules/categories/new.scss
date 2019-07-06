@@ -1,0 +1,125 @@
+.categories-new {
+  font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+  .main {
+    margin: 0 auto;
+    padding-top: 60px;
+    width: 70vw;
+  
+    .boardCreate {
+      width: 42vw;
+      border-radius: 20px;
+      padding:30px;
+      margin: 0 auto;
+      border: 4px double black;
+      
+  
+      &__title {
+        margin: 0 10px;
+        p {
+          border: 1px solid black;
+          border-radius: 10px;
+          font-size: 20px;
+          font-weight: bold;
+          color: black;
+          line-height: 40px;
+          text-align: center;
+        }
+      }
+  
+      &__form {
+        text-align: center;
+        margin-top:40px;
+  
+        .title {
+  
+          &__form {
+            height: 7vh;
+            width: 30vw;
+            border-radius: 10px;
+            opacity: 0.8;
+            font-size: 18px;
+            font-weight: bold;
+            outline: 0;
+            padding-left: 10px;
+            font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+          }
+
+          &__board-id {
+            display: none;
+          }
+  
+          &__form:focus {
+            opacity: 1;
+          }
+        }
+  
+        .submit {
+          margin-top:30px;
+          margin-bottom:30px;
+  
+          &__btn {
+            width: 15vw;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 4px double black;
+            outline: 0;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color:  gray;
+            margin-bottom: 0;
+            padding: 5px 0;
+  
+            p {
+              line-height: 30px;
+              font-size: 20px;
+              font-weight: bold;
+              color:  gray;
+              margin-bottom: 0;
+            }
+  
+          }
+              &__btn:hover {
+                border: 4px solid black;
+                color:  black;
+  
+                p {
+                  color:  black;
+                }
+              }
+        }
+      }
+
+      .submit-back {
+        background-color: lightgray;
+        width: 16vh;
+        font-size: 25px;
+        margin:0 auto;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        cursor: pointer;
+  
+        .back-btn {
+          text-align: center;
+          color: gray;
+        }
+      }
+  
+      a {
+        text-decoration: none;
+        color: gray;
+      }
+  
+      .submit-back:hover {
+        opacity: 0.5;
+        color: black;
+        font-weight: bold;
+      }
+  
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

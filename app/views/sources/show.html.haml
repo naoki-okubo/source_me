@@ -20,7 +20,7 @@
                           = @board[i].name
                   - i += 1
             .bottom
-              = link_to "#" do
+              = link_to new_category_path(params[:id]) do
                 .createCategoryBtn
                   %i.fas.fa-folder-plus
                   %p カテゴリーを追加する
