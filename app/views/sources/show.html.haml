@@ -1,0 +1,60 @@
+%div
+  .container-fluid
+    .row
+      = render 'shared/header'
+      .show-main
+        .side
+          .side__categories
+            .top
+              .top__title
+                %i.far.fa-folder
+                %p Category 一覧
+            .center
+              .category-contents
+                - i = 0
+                -  while i < @board.length
+                  = link_to "#" do
+                    .category-box
+                      .category-title
+                        %p
+                          = @board[i].name
+                  - i += 1
+            .bottom
+              = link_to "#" do
+                .createCategoryBtn
+                  %i.fas.fa-folder-plus
+                  %p カテゴリーを追加する
+          .side__sources
+            .center
+              = link_to new_source_path do
+                .createSourceBtn
+                  %i.fas.fa-plus
+                  %p 新規Source記事
+              .source-contents
+                - i = 0
+                -  while i < @board[0].sources.length
+                  .source-box
+                    = link_to "#" do
+                      .source-title
+                        %p 
+                          = @board[0].sources[i].title
+                      = link_to "#{@board[0].sources[i].url}" do
+                        %i.fas.fa-external-link-alt
+                  - i += 1
+        .body-contents
+          .sub-header
+            .board-title
+              %h1 プログラミング
+          .body
+            .source-top
+              = link_to "#{@board[0].sources[0].url}" do
+                .source-top__title
+                  %h2 
+                    = @board[0].sources[0].title
+              .source-top__category
+                %i.far.fa-folder
+                %p HTML
+            .center
+              .text
+                %p 
+                  = @board[0].sources[0].text

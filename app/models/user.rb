@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   has_many :boards, dependent: :destroy
   has_many :sources, dependent: :destroy
-  has_many :category, dependent: :destroy
+  has_many :categories, dependent: :destroy
 
 end

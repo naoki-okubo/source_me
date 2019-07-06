@@ -7,7 +7,7 @@
           .boardList
             - i = 0
             -  while i < @user.boards.length
-              = link_to sources_path do
+              = link_to source_path(@user.boards[i].id) do
                 .board
                   %p
                     = @user.boards[i].name
