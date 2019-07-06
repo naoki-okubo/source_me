@@ -2,9 +2,12 @@
   .container-fluid
     .row
       = render 'shared/header'
+      - if @user.errors.any?
+        .error-message
+          %p 入力方法・内容に誤りがございます。
+          %p お手数ではありますが、ご入力された内容を再度ご確認下さいませ。
       .new-main
         = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-          = render "devise/shared/error_messages", resource: resource
           .sourceCreate
             .sourceCreate__title
               %p プロフィール編集
@@ -50,6 +53,6 @@
           .submit
             #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class:"cancel-btn"}
         .sourceCreate__title
-          = link_to :back, class:"back-btn" do
+          = link_to user_path(current_user.id), class:"back-btn" do
             .submit-back
               戻る
