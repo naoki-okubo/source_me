@@ -2,6 +2,10 @@
   .container-fluid
     .row
       = render 'shared/header'
+      .sub-header
+        .board-title
+          %h1 
+            = @board_id.name
       .show-main
         .side
           .side__categories
@@ -12,27 +16,17 @@
             .center
               #category-contents.category-contents
                 - i = 0
-                -  while i < @board.length
-                  #category-box.category-box(data-id="#{@board[i].sources.ids}")
+                -  while i < @category.length
+                  #category-box.category-box(data-source-id="#{@category[i].sources.ids}" data-category-id="#{@category[i].id}" data-board-id="#{params[:id]}")
                     .category-title
                       %p
-                        = @board[i].name
+                        = @category[i].name
                   - i += 1
             .bottom
-              = link_to new_category_path(params[:id]) do
-                .createCategoryBtn
-                  %i.fas.fa-folder-plus
-                  %p カテゴリーを追加する
+              #createCategoryBtn.createCategoryBtn(data-board-id="#{params[:id]}")
+                %i.fas.fa-folder-plus
+                %p カテゴリーを追加する
           .side__sources
-            .center
-              = link_to new_source_path(params[:id]) do
-                .createSourceBtn
-                  %i.fas.fa-plus
-                  %p 新規Source記事
-              #source-contents.source-contents
+            #center.center
         .body-contents
-          .sub-header
-            .board-title
-              %h1 
-                = @board_id.name
           #body.body

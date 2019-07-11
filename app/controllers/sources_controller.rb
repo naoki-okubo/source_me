@@ -1,4 +1,5 @@
 class SourcesController < ApplicationController
+  protect_from_forgery except: :create
   before_action :set_user
 
   def index
@@ -24,8 +25,9 @@ class SourcesController < ApplicationController
 
   def show
     @board_id = @user.boards.find(params[:id])
-    @board = @user.categories.where(board_id: "#{params[:id]}")
+    @category = @user.categories.where(board_id: "#{params[:id]}")
     gon.sources = Source.all
+    gon.categories = Category.all
     
 
   end
