@@ -12,7 +12,7 @@
       border-radius: 20px;
       padding-top:10px;
       padding-bottom:10px;
-      margin: 0 auto;
+      margin-left: 5vw;
       margin-bottom: 40px;
       border: 4px double grey;
   
@@ -51,6 +51,7 @@
             }
 
             .value {
+              box-sizing: border-box;
               width: 30vw;
               padding:10px;
               padding-left:20px;
@@ -68,8 +69,14 @@
             height: 30vh;
           }
 
-          .form_board-id {
+          .form_board-id, #source_category_id {
             display:none;
+          }
+
+          .category-form {
+            text-align: center;
+            margin-bottom:4vh;
+            letter-spacing: 4px;
           }
         }
   
@@ -164,6 +171,10 @@
       opacity: 0.5;
       color: black;
       font-weight: bold;
+    }
+
+    #category-id{
+      display:none;
     }
   }
 }

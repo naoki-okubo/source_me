@@ -1,16 +1,17 @@
 .categories-new {
   font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
-
+  
+  
   .main {
-    margin: 0 auto;
-    padding-top: 60px;
-    width: 70vw;
+    overflow: scroll;
+    width: 50vw;
   
     .boardCreate {
       width: 42vw;
       border-radius: 20px;
       padding:30px;
-      margin: 0 auto;
+      margin-top: 1vh;
+      margin-left: 7vw;
       border: 4px double black;
       
   
@@ -55,8 +56,7 @@
         }
   
         .submit {
-          margin-top:30px;
-          margin-bottom:30px;
+          margin-top:50px;
   
           &__btn {
             width: 15vw;
