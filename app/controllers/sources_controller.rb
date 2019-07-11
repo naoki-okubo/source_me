@@ -7,7 +7,7 @@ class SourcesController < ApplicationController
   def new
     @source  = Source.new
     @board_id = params[:format]
-    @board = User.find(current_user.id).categories.where(board_id: "#{@board_id}")
+    @board = @user.categories.where(board_id: "#{@board_id}")
   end
 
   def create
@@ -23,7 +23,11 @@ class SourcesController < ApplicationController
   end
 
   def show
-    @board = User.find(current_user.id).categories.where(board_id: "#{params[:id]}")
+    @board_id = @user.boards.find(params[:id])
+    @board = @user.categories.where(board_id: "#{params[:id]}")
+    gon.sources = Source.all
+    
+
   end
 
   def edit

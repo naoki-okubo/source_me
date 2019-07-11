@@ -12,9 +12,8 @@
 
     // 以下、カテゴリーサイドバー部分ーーーーーーーーーーーーーーーーーーーーー
     &__categories {
-      border: 1px solid black;
+      border: 1px solid lightgray;
       border-top: none;
-      border-right: none;
       width:13vw;
       display: flex;
       flex-direction: column;
@@ -127,6 +126,7 @@
       width:14vw;
       height: calc( 100vh - 70px );
       padding-top: 7px;
+      display: none;
 
       .center {
         display: flex;
@@ -183,10 +183,7 @@
               margin: 5px;
 
               p {
-                max-width: 110px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+                max-width: 150px;
                 border-bottom: 1px solid black;
               }
             }
@@ -199,8 +196,6 @@
 
           .source-box:hover {
             p {
-              white-space: normal;
-              overflow: visible;
               color: black;
               font-weight: bold;
               border-bottom: 2px solid black;
