@@ -1,0 +1,128 @@
+.index-main {
+  font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+  max-height: 50vh;
+  position: fixed;
+  .title {
+    width: 100vw;
+    position: absolute;
+    top: 30vh;
+    z-index: 1;
+    h1 {
+      letter-spacing: 5px;
+      font-size: 150px;
+      font-weight: bold;
+      text-align: center;
+      text-shadow:0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
+    }
+  }
+  .link-img {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    .link-icon {
+      width:100vw;
+      color: white;
+      font-size: 1000px;
+      text-shadow: 0px 0px 50px lightgrey;
+      animation-name: roop-icon;
+      animation-duration: 6000s;
+      animation-timing-function: ease;
+      animation-iteration-count: infinite;
+      text-shadow:1px 0 0 a, 1px 1px 0 a, 0 1px 0 a, -1px 1px 0 a, -1px 0 0 a, -1px -1px 0 a, 0 -1px 0 a, 1px -1px 0 a;
+    }
+  }
+  .contents {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    position: absolute;
+    top: 60vh;
+    z-index: 1;
+    letter-spacing: 2px;
+    .sign-up {
+      margin-right:150px;
+      transition: all  1s ease 0s;
+      cursor: pointer;
+    }
+    .log-in {
+      transition: all  1s ease 0s;
+      cursor: pointer;
+    }
+
+    .sign-up:hover {
+      letter-spacing: 30px;
+      color: red;
+    }
+
+    .log-in:hover {
+      letter-spacing: 30px;
+      color: red;
+    }
+
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+// --------------animation------------------
+
+
+@keyframes roop-icon {
+  100% {
+    transform:rotate3D(3,3,2,100000deg)
+  }
+}
+
+@keyframes top-select_effect {
+  0%{
+    letter-spacing: 30px;
+    color: red;
+  }
+  10% {
+    letter-spacing: 30px;
+    color: red;
+  }
+  100% {
+    letter-spacing: 3000px;
+    color: lightgrey;
+    transform:rotate3D(1,1,1,10000deg);
+    font-size: 2000px;
+    font-weight: bold;
+  }
+}
+
+
+@keyframes top-close_effect {
+  0%{
+    letter-spacing: 3000px;
+    color: lightgrey;
+    transform:rotate3D(1,1,1,10000deg);
+    font-size: 2000px;
+    font-weight: bold;
+  }
+  90% {
+    letter-spacing: 30px;
+    color: red;
+  }
+  100% {
+    transition: all  1s ease 0s;
+    cursor: pointer;
+    
+  }
+}
+
+@keyframes top-jump_effect {
+  0%, 100%, 20%, 50%, 80% {
+      transform: translateY(0px);
+  }
+  40% {
+      transform: translateY(-20px);
+  }
+  60% {
+      transform: translateY(-8px);
+  }
+}

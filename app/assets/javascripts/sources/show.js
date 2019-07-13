@@ -1,5 +1,5 @@
-$(document).on('turbolinks:load',function(){
-
+$(document).on('turbolinks:load',function(e){
+  e.preventDefault();
 
   $('#createCategoryBtn').on('click',function(){
     $('#body').html('');
@@ -26,9 +26,7 @@ $(document).on('turbolinks:load',function(){
     $('#body').append(createCategory);
   });
 
-  $('[id=category-box]').on('mouseenter',function(e){
-    e.preventDefault();
-    console.log(this);
+  $('[id=category-box]').on('mouseenter',function(){
     $('.side__sources').css("display","block");
     $('#center').html('');
     var sources = $(this).data('source-id');
@@ -60,7 +58,7 @@ $(document).on('turbolinks:load',function(){
     }
 
 
-    $('.source-box').on('click',function(){
+    $('.source-box').on('mouseenter',function(){
       $('#body').html('');
       var source = 
                   `
@@ -88,7 +86,7 @@ $(document).on('turbolinks:load',function(){
       $('#body').html('');
       var category_id = $(this).data('id') - 1
       var select_category = gon.categories[category_id]
-      console.log(this);
+
 
       var createSource = 
                           `
