@@ -1,77 +1,179 @@
 .board-show {
+  font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
 
   .container-fluid{
-    height: calc(100vh - 140px);
-
 
     // 以下、メイン部分ーーーーーーーーーーーーーーーーーーーーーー
     .main {
       margin: 0 auto;
-      padding-top: 60px;
-      height: calc(100vh - 140px);
-      width: 70vw;
-      
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
 
-      .boardList {
-        width: 70vw;
-        margin-top: 20px;
+      .header {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-height: 67vh;
-        overflow: scroll;
-        border-radius: 10px;
-        padding: 20px;
-        position: relative;
-        z-index: 10;
-
-
-        .board {
-          width: 19vw;
-          margin: 10px;
-          padding:10px;
-          border-radius: 20px;
-          cursor: pointer;
-          transition: 1s all ease 0s;
-          box-shadow: 0px 0px 5px grey;
-
-          p {
-            font-size: 24px;
-            font-weight: bold;
-            color: black;
-            word-wrap: break-word;
-            max-width: 300px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            margin-bottom: 0;
-            text-align: center;
-            transition: 1s all ease 0s;
-          }
+        justify-content: flex-end;
+        margin-bottom: 1vh;
+        height: 10vh;
+        
+        .fa-bars {
+          margin-top: 1vw;
+          float: right;
+          font-size: 8vh;
+          margin-right: 2vw;
+        }
+        .fa-bars:hover {
+          color: red;
         }
 
-        .board:hover {
+        .fa-align-right {
+          margin-top: 1vw;
+          float: right;
+          font-size: 8vh;
+          margin-right: 2vw;
+        }
+        .fa-align-right:hover {
+          color: red;
+        }
 
-          p {
-            color: black;
-            max-height: 300px;
-            word-wrap: break-word;
-            white-space: normal;
-            overflow: visible;
-            letter-spacing: 7px
+        .fa-user-circle {
+          margin-top: 1vw;
+          font-size: 8vh;
+          margin-right: 2vw;
+        }
+        .fa-user-circle:hover {
+          color:red;
+        }
+
+        .fa-sign-out-alt {
+          margin-top: 1vw;
+          font-size: 8vh;
+          margin-right: 2vw;
+        }
+        .fa-sign-out-alt:hover {
+          color:red;
+        }
+      }
+
+      .title {
+        h1 {
+          padding-top: 3vh;
+          font-size: 12vh;
+          text-align: center;
+          letter-spacing: 5px;
+          font-weight: bold;
+          color: black;
+        }
+      }
+
+      .boardList {
+        overflow: scroll;
+        overflow-y: hidden;
+        position: relative;
+        z-index: 10;
+        display: flex;
+        justify-content: flex-start;
+        margin: 7vh 0;
+        padding-left: 10vh;
+        
+
+        .next {
+          .fa-angle-double-right {
+            font-size: 8vh;
           }
         }
 
         a {
-          text-decoration: none;
+          .board {
+            width: 15vw;
+            height: 15vw;
+            margin: 3vh 0;
+            margin-right: 10vh;
+            border-radius: 30%;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: infinity-loop 20s infinite linear 0s both;
+            p {
+              line-height: 20vw;
+              font-size: 24px;
+              font-weight: bold;
+              color: black;
+              word-wrap: break-word;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              margin-bottom: 0;
+              text-align: center;
+              transition: 1s all ease 0s;
+            }
+          }
+
+          .board:hover {
+            p {
+              color: black;
+              max-height: 300px;
+              word-wrap: break-word;
+              white-space: normal;
+              overflow: visible;
+              letter-spacing: 7px
+            }
+          }
         }
       }
-      .boardList:hover {
+
+      .add-board{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 2vw 0 0;
+        margin:1vh 0;
+
+        .fa-plus-circle {
+          font-size: 18vh;
+          color: red;
+          cursor: pointer;
+          animation-name: top-jump_effect;
+          animation-duration: 1.5s;
+          animation-timing-function: ease;
+          animation-iteration-count: infinite;
+        }
+        .fa-plus-circle:hover {
+          opacity: 0.5;
+        }
+      }
+
+
+
+      ::-webkit-scrollbar {
+        display: none;
+        -webkit-appearance: none;
+        animation: infinity-loop 30s infinite linear 1s both;
       }
     }
   }
-  
-  p {
-    font-family: 'ヒラギノ明朝 ProN','Hiragino Mincho ProN';
+}
+
+@keyframes top-jump_effect {
+  0%, 100%, 20%, 50%, 80% {
+      transform: translateY(0px);
+  }
+  40% {
+      transform: translateY(-20px);
+  }
+  60% {
+      transform: translateY(-8px);
+  }
+}
+
+
+
+@keyframes infinity-loop {
+  from {
+    transform: translateX(0vw);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
