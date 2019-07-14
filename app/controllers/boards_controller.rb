@@ -21,6 +21,9 @@ class BoardsController < ApplicationController
   end
 
   def show
+    @board = @user.boards.all.order(id: 'DESC')
+    gon.user = @user
+    
   end
 
   def edit

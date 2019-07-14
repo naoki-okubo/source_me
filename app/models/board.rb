@@ -4,5 +4,5 @@ class Board < ApplicationRecord
   has_many :categories, dependent: :destroy
 
   # ------------validate-----------
-  validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 20 }
 end

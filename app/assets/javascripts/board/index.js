@@ -58,7 +58,7 @@ $(document).on('turbolinks:load',function(e){
 
   $(document).on("click",'#sign-up', function (e) {
     e.preventDefault();
-    var signup =
+              var signup =
                           `
                             <div class="registration-new">
                               <div class="new-main">

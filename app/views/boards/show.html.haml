@@ -1,14 +1,21 @@
 .board-show
   .container-fluid
     .row
-      = render 'shared/header'
-      - if 0 < @user.boards.length
-        .main
-          .boardList
-            - i = 0
-            -  while i < @user.boards.length
-              = link_to source_path(@user.boards[i].id) do
-                .board
-                  %p
-                    = @user.boards[i].name
-              - i += 1
+      -# のちに利用します
+      -# - if 0 < @user.boards.length
+      .main
+        .header
+          %i.fas.fa-bars
+        .title
+          %h1 Your Boards
+        .boardList
+          - i = 0
+          -  while i < @user.boards.length
+            = link_to source_path(@board[i].id) do
+              .board
+                %p
+                  = @board[i].name
+            - i += 1
+        .add-board
+          #fa-plus-circle
+            %i.fas.fa-plus-circle
