@@ -25,6 +25,7 @@
         margin-top: 40px;
   
         p {
+          text-shadow:0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
           padding: 0 2vh 2vh; 
           width: 28vw;
           margin: 0 auto;
@@ -50,6 +51,7 @@
           margin: 3vh auto;
 
           p {
+            text-shadow:0 1px 0 #888, 0 2px 0 #888, 0 2px 3px #333;
             color: black;
             font-weight: bold;
             line-height: 80px;
@@ -88,6 +90,7 @@
           margin-bottom:20px;
   
           &__btn{
+            box-shadow:0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
             background-color: red;
             width: 10vw;
             border-radius: 10px;
@@ -99,6 +102,7 @@
             transition: all 0.3s ease 0s;
   
             p {
+              text-shadow:0 1px 0 #888, 0 2px 0 #888, 0 2px 3px #333;
               font-size: 20px;
               font-weight: bold;
               color:  white;
@@ -114,8 +118,10 @@
 
         .login__btn {
           margin: 0 auto;
+          box-shadow:0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
 
           a {
+            text-shadow:0 1px 0 #888, 0 2px 0 #888, 0 2px 3px #333;
             color: white;
             border-bottom: 1px solid gray;
             transition: all 0.3s ease 0s;
@@ -147,13 +153,13 @@
       justify-content: flex-end;
 
       .fa-times-circle {
+        text-shadow:0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
         font-size: 80px;
         color: red;
         margin-bottom: 20px;
         position: fixed;
         right: 50px;
         top: 50px;
-        opacity: 0.3;
         cursor: pointer;
         transition: all 0.3s ease 0s;
       }

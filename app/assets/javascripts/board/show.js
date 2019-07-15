@@ -82,19 +82,19 @@ $(document).on('turbolinks:load',function(e){
 
 
   $(document).on("mouseenter",'.fa-plus-circle', function (e) {
-    $('.fa-plus-circle').css("animation-name","none");
+    $('.fa-plus-circle').css("animation-play-state","paused");
   });
   $(document).on("mouseleave",'.fa-plus-circle', function (e) {
-    $('.fa-plus-circle').css("animation-name","top-jump_effect");
+    $('.fa-plus-circle').css("animation-play-state","running");
   });
 
 
 
-
-  $(document).on("mouseenter",'.boardList', function (e) {
-    $('.board').css("animation","none");
-  });
-  $(document).on("mouseleave",'.boardList', function (e) {
-    $('.board').css("animation","infinity-loop 20s infinite linear 0s both");
-  });
+  // ボードのスクロールバー　自動スクロール
+  // $(document).on("mouseenter",'.boardList', function (e) {
+  //   $('.board').css("animation-play-state","paused");
+  // });
+  // $(document).on("mouseleave",'.boardList', function (e) {
+  //   $('.board').css("animation-play-state","running");
+  // });
 });

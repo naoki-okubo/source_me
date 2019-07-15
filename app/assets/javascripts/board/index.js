@@ -16,40 +16,42 @@ $(document).on('turbolinks:load',function(e){
   };
 
   
-  var jumpAction_signUp_Interval = setInterval(jumpAction_signUp, 1000);
+  // 新規登録・ログインボタンのジャンプアクション
+  // setInterval(jumpAction_signUp, 1000);
   
-  $('.sign-up').hover(
-    function() {
-      clearInterval(jumpAction_signUp_Interval);
-    },
-    function() {
-      jumpAction_signUp_Interval = setInterval(jumpAction_signUp, 1000);
-    }
-  );
+  // $('.sign-up').hover(
+  //   function() {
+  //     $('.sign-up').css("animation-play-state","paused");
+  //   },
+  //   function() {
+  //     $('.sign-up').css("animation-play-state","running");
+  //   }
+  // );
 
 
 
 
-  var jumpAction_logIn = function(){
-    $('.log-in').css("animation-name","top-jump_effect");
-    $('.log-in').css("animation-duration","0.9s");
-    $('.log-in').css("animation-timing-function","(0, 0.5, 0.8, 1)");
-    $('.log-in').on('animationend', function() {
-      $('.log-in').css("animation-name","none");
-    });
-  };
+  // var jumpAction_logIn = function(){
+  //   $('.log-in').css("animation-name","top-jump_effect");
+  //   $('.log-in').css("animation-duration","0.9s");
+  //   $('.log-in').css("animation-timing-function","(0, 0.5, 0.8, 1)");
+  //   $('.log-in').on('animationend', function() {
+  //     $('.log-in').css("animation-name","none");
+  //   });
+  // };
   
 
-  var jumpAction_logIn_Interval = setInterval(jumpAction_logIn, 1000);
+  // setInterval(jumpAction_logIn, 1000);
   
-  $('.log-in').hover(
-    function() {
-      clearInterval(jumpAction_logIn_Interval);
-    },
-    function() {
-      jumpAction_logIn_Interval = setInterval(jumpAction_logIn, 1000);
-    }
-  );
+  // $('.log-in').hover(
+  //   function() {
+      
+  //     $('.log-in').css("animation-play-state","paused");
+  //   },
+  //   function() {
+  //     $('.log-in').css("animation-play-state","running");
+  //   }
+  // );
 
 
 
