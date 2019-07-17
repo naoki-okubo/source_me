@@ -23,6 +23,7 @@ class BoardsController < ApplicationController
   def show
     @board = @user.boards.all.order(id: 'DESC')
     gon.user = @user
+    gon.authenticity_token = form_authenticity_token
     
   end
 
