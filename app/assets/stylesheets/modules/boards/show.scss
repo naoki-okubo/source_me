@@ -150,10 +150,7 @@
           font-size: 18vh;
           color: red;
           cursor: pointer;
-          animation-name: top-jump_effect;
-          animation-duration: 1.5s;
-          animation-timing-function: ease;
-          animation-iteration-count: infinite;
+          animation: top-jump_effect 1.5s infinite ease 0s;
         }
         .fa-plus-circle:hover {
           opacity: 0.5;
