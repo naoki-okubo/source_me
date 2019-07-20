@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load',function(e){
   e.preventDefault();
+  
 
   $('#createCategoryBtn').on('click',function(){
     $('#body').html('');
@@ -8,9 +9,14 @@ $(document).on('turbolinks:load',function(e){
                           `
                             <div class="categories-new">
                               <div class="main">
+                                <a class="back-btn">
+                                  <div class="submit-back">
+                                    <i class="far fa-times-circle"></i>
+                                  </div>
+                                </a>
                                 <form action="/categories" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="bycxGi4mA3wu1F7NiBZn4GW150xs5S8ijAyBsPszTU0FzTzST6jPhvRlu2paFvSetroFkLh57/86OoG/kq0jrA=="><div class="boardCreate">
                                   <div class="boardCreate__title">
-                                    <p>新しいカテゴリーの作成</p>
+                                    <p>New Category</p>
                                   </div>
                                   <div class="boardCreate__form">
                                     <div class="title">
@@ -26,18 +32,19 @@ $(document).on('turbolinks:load',function(e){
     $('#body').append(createCategory);
   });
 
-  $('[id=category-box]').on('mouseenter',function(){
+  $(document).on('mouseenter','[id=category-box]','turbolinks:load', function (e) {
+    e.preventDefault();
     $('.side__sources').css("display","block");
     $('#center').html('');
     var sources = $(this).data('source-id');
 
 
     var sourceListTop = `
+                          <div class="source-contents" id="source-contents">
+                          </div>
                           <div class="createSourceBtn" id="createSourceBtn" data-id="${$(this).data('category-id')}" data-board-id="${$(this).data('board-id')}">
                             <i class="fas fa-plus"></i>
                             <p>新規Source記事</p>
-                          </div>
-                          <div class="source-contents" id="source-contents">
                           </div>
                         `
     $('#center').append(sourceListTop)
@@ -58,7 +65,7 @@ $(document).on('turbolinks:load',function(e){
     }
 
 
-    $('.source-box').on('mouseenter',function(){
+    $('.source-box').on('click',function(){
       $('#body').html('');
       var source = 
                   `
@@ -73,13 +80,14 @@ $(document).on('turbolinks:load',function(e){
                     </div>
                     <div class="center">
                       <div class="text">
-                        <p>
-                        ${$(this).data('text')}
+                        <p style="white-space:pre-line">
+                          ${$(this).data('text')}
                         </p>
                       </div>
                     </div>
                   `
       $('#body').append(source)
+      $('.side__sources').css("display","none");
     });
 
     $('#createSourceBtn').on('click',function(){
@@ -91,10 +99,15 @@ $(document).on('turbolinks:load',function(e){
       var createSource = 
                           `
                             <div class="sources-new">
-                              <div class="new-main">
+                              <div class="sources-new-main">
+                              <a class="back-btn">
+                                <div class="submit-back">
+                                  <i class="far fa-times-circle"></i>
+                                </div>
+                              </a>
                                 <form action="/sources" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ZnL4ek1hS4YXPqZEOn/MpKICSJJFWM5Dx5Jg/k0lCpMMmPWyLO+HfM2PQ+Pof1/acQ2qTpHEDp5xpGDxJLtkcg=="><div class="sourceCreate">
                                 <div class="sourceCreate__title">
-                                  <p>新規 Source記事</p>
+                                  <p>New Source</p>
                                 </div>
                                 <div class="sourceCreate__form">
                                   <div class="form-contents">
@@ -132,5 +145,11 @@ $(document).on('turbolinks:load',function(e){
 
   $('.side__sources').on('mouseleave',function(){
     $('.side__sources').css("display","none");
+  });
+
+
+  $(document).on("click", ".fa-times-circle", function (e) {
+    $('.categories-new').css("display","none");
+    $('.sources-new').css("display","none");
   });
 });

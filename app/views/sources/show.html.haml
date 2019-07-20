@@ -1,10 +1,9 @@
 %div
   .container-fluid
     .row
-      = render 'shared/header'
-      .sub-header
-        .board-title
-          %h1 
+      .source-header
+        = link_to board_path(@board_id), data: {"turbolinks" => false} do
+          %p
             = @board_id.name
       .show-main
         .side

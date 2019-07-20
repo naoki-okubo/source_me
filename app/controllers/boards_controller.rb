@@ -14,8 +14,6 @@ class BoardsController < ApplicationController
     if @board.save
       redirect_to board_path(@user.id)
     else
-      flash[:notice] = "error"
-      redirect_to new_board_path
     end
 
   end

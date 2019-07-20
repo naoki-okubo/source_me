@@ -1,25 +1,25 @@
-%div.sessions-new
-  .container-fluid
-    .row
-      = render 'shared/header'
-      .new-main
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .sourceCreate
-            .sourceCreate__title
-              %p ログイン
-            .sourceCreate__form
-              .form
-                = f.email_field :email, autofocus: true, autocomplete: "email", class:"form__url", placeholder:"メールアドレス"
-              .form
-                = f.password_field :password, autocomplete: "current-password", class:"form__url", placeholder:"パスワード"
-              - if devise_mapping.rememberable?
-                .remember_form
-                  = f.check_box :remember_me
-                  = f.label :ログイン情報を保持する
-              .submit
-                = f.submit "ログイン", class:"submit__btn"
-              .submit.login__btn
-                = render "devise/shared/links"
-            = link_to :back, class:"back-btn" do
-              .submit-back
-                戻る
+.error-message
+  %p 入力方法・内容に誤りがございます。
+  %p お手数ではありますが、ご入力された内容を再度ご確認下さいませ。
+.sessions-new
+  .new-main
+    = link_to :back do
+      .back-btn
+        .submit-back
+          %i.far.fa-times-circle
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .sourceCreate
+        .sourceCreate__title
+          %p Login Form
+        .sourceCreate__form
+          .form
+            = f.email_field :email, autofocus: true, autocomplete: "email", class:"form__url", placeholder:"メールアドレス"
+          .form
+            = f.password_field :password, autocomplete: "current-password", class:"form__url", placeholder:"パスワード"
+          - if devise_mapping.rememberable?
+            .remember_form
+              = f.check_box :remember_me
+              = f.label :ログイン情報を保持する
+          .submit
+            = f.submit "ログイン", class:"submit__btn"
+

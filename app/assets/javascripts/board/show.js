@@ -1,12 +1,9 @@
 $(document).on('turbolinks:load',function(e){
   e.preventDefault();
-
-
+  console.log(window.name)
 
 
   $(document).on('mouseenter','.fa-bars', function(e){
-    e.preventDefault();
-    var user = gon.user;
     var close = 
                 `
                   <div class="header">
@@ -22,7 +19,6 @@ $(document).on('turbolinks:load',function(e){
 
 
     $(document).on('mouseleave','.header', function(e){
-      e.preventDefault();
       $('.header').html('');
       var bar = 
                 `
@@ -40,7 +36,6 @@ $(document).on('turbolinks:load',function(e){
 
 
   $(document).on("click",'#fa-plus-circle', function (e) {
-    e.preventDefault();
   
     var newBoard = 
                   `
@@ -72,7 +67,6 @@ $(document).on('turbolinks:load',function(e){
     $('.fa-plus-circle').css("animation","none");
     $(newBoard).appendTo('.board-show').hide().fadeIn(300);
     $(document).on("click", ".back-btn", function (e) {
-      e.preventDefault();
       $('.fa-plus-circle').css("animation","top-jump_effect 1.5s infinite ease 0s");
       $('.boards-new').remove();
     });
@@ -82,8 +76,7 @@ $(document).on('turbolinks:load',function(e){
 
 
   $(document).on("click",'.fa-user-circle', function (e) {
-    e.preventDefault();
-    console.log(gon.authenticity_token);
+    var user = gon.user;
   
     var profile = 
                   `
@@ -102,27 +95,27 @@ $(document).on('turbolinks:load',function(e){
                           <div class="form-contents">
                             <div class="form">
                               <p>ニックネーム　Nick name</p>
-                              <input autofocus="autofocus" class="value" type="text" value="${gon.user.nickname}" name="user[nickname]" id="user_nickname">
+                              <input autofocus="autofocus" class="value" type="text" value="${user.nickname}" name="user[nickname]" id="user_nickname">
                             </div>
                             <div class="form">
                               <p>メールアドレス　E-mail</p>
-                              <input autocomplete="email" class="value" type="email" value="${gon.user.email}" name="user[email]" id="user_email">
+                              <input autocomplete="email" class="value" type="email" value="${user.email}" name="user[email]" id="user_email">
                             </div>
                             <div class="form">
                               <p>姓　Family-name</p>
-                              <input class="value" type="text" value="${gon.user.family_name}" name="user[family_name]" id="user_family_name">
+                              <input class="value" type="text" value="${user.family_name}" name="user[family_name]" id="user_family_name">
                             </div>
                             <div class="form">
                               <p>名　First-name</p>
-                              <input class="value" type="text" value="${gon.user.first_name}" name="user[first_name]" id="user_first_name">
+                              <input class="value" type="text" value="${user.first_name}" name="user[first_name]" id="user_first_name">
                             </div>
                             <div class="form">
                               <p>姓(カナ)　Family-name(kana)</p>
-                              <input class="value" type="text" value="${gon.user.family_name_kana}" name="user[family_name_kana]" id="user_family_name_kana">
+                              <input class="value" type="text" value="${user.family_name_kana}" name="user[family_name_kana]" id="user_family_name_kana">
                             </div>
                             <div class="form">
                               <p>名(カナ)　First-name(kana)</p>
-                              <input class="value" type="text" value="${gon.user.first_name_kana}" name="user[first_name_kana]" id="user_first_name_kana">
+                              <input class="value" type="text" value="${user.first_name_kana}" name="user[first_name_kana]" id="user_first_name_kana">
                             </div>
                             <div class="form">
                               <p class="any">パスワードを変更する</p>
@@ -162,7 +155,6 @@ $(document).on('turbolinks:load',function(e){
     $(profile).appendTo('.board-show').hide().fadeIn(300);
     $('.fa-plus-circle').css("animation","none");
     $(document).on("click", ".back-btn", function (e) {
-      e.preventDefault();
       $('.fa-plus-circle').css("animation","top-jump_effect 1.5s infinite ease 0s");
       $('.users-edit').remove();
     });
