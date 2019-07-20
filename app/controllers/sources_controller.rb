@@ -18,8 +18,6 @@ class SourcesController < ApplicationController
     if @source.save
       redirect_to source_path(@board_id)
     else
-      flash[:notice] = "error"
-      redirect_to new_source_path(@board_id)
     end
   end
 
@@ -28,8 +26,6 @@ class SourcesController < ApplicationController
     @category = @user.categories.where(board_id: "#{params[:id]}")
     gon.sources = Source.all
     gon.categories = Category.all
-    
-
   end
 
   def edit

@@ -18,8 +18,6 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to source_path(@board_id)
     else
-      flash[:notice] = "error"
-      redirect_to new_category_path(@board_id)
     end
   end
 

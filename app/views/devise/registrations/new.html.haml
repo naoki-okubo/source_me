@@ -1,46 +1,41 @@
-%div.registration-new
-  .container-fluid
-    .row
-      = render 'shared/header'
-      - if @user.errors.any?
-        .error-message
-          %p 入力方法・内容に誤りがございます。
-          %p お手数ではありますが、ご入力された内容を再度ご確認下さいませ。
-      .new-main
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          .sourceCreate
-            .sourceCreate__title
-              %p 新規会員登録
-            .sourceCreate__form
-              .form-contents
-                .form
-                  %p ニックネーム
-                  = f.text_field :nickname,autofocus: true, class:"value", placeholder:"例) SourceMe 太郎"
-                .form
-                  %p メールアドレス
-                  = f.email_field :email, autocomplete: "email", class:"value", placeholder:"PC・携帯どちらでも可"
-                .form
-                  %p 姓
-                  = f.text_field :family_name, class:"value", placeholder:"例) 山田"
-                .form
-                  %p 名
-                  = f.text_field :first_name, class:"value", placeholder:"例) 彩"
-                .form
-                  %p 姓(カナ)
-                  = f.text_field :family_name_kana, class:"value", placeholder:"例) ヤマダ"
-                .form
-                  %p 名(カナ)
-                  = f.text_field :first_name_kana, class:"value", placeholder:"例) サヤカ"
-                .form
-                  %p パスワード
-                  = f.password_field :password, autocomplete: "new-password", class:"value", placeholder:"６文字以上"
-                .form
-                  %p パスワード(確認)
-                  = f.password_field :password_confirmation, autocomplete: "new-password", class:"value", placeholder:"６文字以上"
-              .submit
-                = f.submit "登録する", class:"submit__btn"
-              .submit.login__btn
-                = render partial:"devise/shared/links"
-              = link_to root_path, class:"back-btn" do
-                .submit-back
-                  戻る
+.registration-new
+  .error-message
+    %p 入力方法・内容に誤りがございます。
+    %p お手数ではありますが、ご入力された内容を再度ご確認下さいませ。
+  .new-main
+    = link_to :back do
+      .back-btn
+        .submit-back
+          %i.far.fa-times-circle
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .sourceCreate
+        .sourceCreate__title
+          %p 新規会員登録
+        .sourceCreate__form
+          .form-contents
+            .form
+              %p ニックネーム
+              = f.text_field :nickname,autofocus: true, class:"value", placeholder:"例) SourceMe 太郎"
+            .form
+              %p メールアドレス
+              = f.email_field :email, autocomplete: "email", class:"value", placeholder:"PC・携帯どちらでも可"
+            .form
+              %p 姓
+              = f.text_field :family_name, class:"value", placeholder:"例) 山田"
+            .form
+              %p 名
+              = f.text_field :first_name, class:"value", placeholder:"例) 彩"
+            .form
+              %p 姓(カナ)
+              = f.text_field :family_name_kana, class:"value", placeholder:"例) ヤマダ"
+            .form
+              %p 名(カナ)
+              = f.text_field :first_name_kana, class:"value", placeholder:"例) サヤカ"
+            .form
+              %p パスワード
+              = f.password_field :password, autocomplete: "new-password", class:"value", placeholder:"６文字以上"
+            .form
+              %p パスワード(確認)
+              = f.password_field :password_confirmation, autocomplete: "new-password", class:"value", placeholder:"６文字以上"
+          .submit
+            = f.submit "登録する", class:"submit__btn"

@@ -60,6 +60,7 @@ $(document).on('turbolinks:load',function(e){
 
   $(document).on("click",'#sign-up', function (e) {
     e.preventDefault();
+    $('.registration-new').remove();
               var signup =
                           `
                             <div class="registration-new">
@@ -154,6 +155,7 @@ $(document).on('turbolinks:load',function(e){
 
   $(document).on("click",'#log-in', function (e) {
     e.preventDefault();
+    $('.sessions-new').remove();
     var login =
                 `
                 <div class="sessions-new">
